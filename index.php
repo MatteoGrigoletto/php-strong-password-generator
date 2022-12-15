@@ -14,15 +14,23 @@ require_once __DIR__ .  "/functions.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
 </head>
-<body>
-    <section class="bg-primary d-flex justify-content-center align-items-center container-fluid" style="height: 100vh;">
-        <div class="container-md bg-light py-5">
-        <form action="" method="get">
-            <label for="password-length">Inserisci numero caratteri password: </label>
-            <input name="password-length" type="text">
-            <button type="submit"> Crea</button>
-        </form>
-        <div></div>
+<body class="bg-primary">
+    <section class="bg-primary d-flex flex-wrap justify-content-center align-items-center container-fluid py-5">
+        <div class="text-center text-light py-5" style="width: 100%;">
+            <h1>Generatore password randomiche</h1>
+        </div>
+        <div class="bg-light p-5">
+            <form action="functions.php" method="get">
+                <div class="mb-3">
+                    <label for="password-length" class="form-label">Inserisci numero caratteri password:</label>
+                    <input type="password" name="password-length" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </section>
   
