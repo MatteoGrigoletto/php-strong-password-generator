@@ -1,13 +1,16 @@
 <?php
 
 $password_length =(empty($_GET['password-length']) ? null : (int)$_GET['password-length']) ;
-$password_type =  (empty($_GET['pass-number']) ? null : 'true') ;
+$password_number =  (empty($_GET['pass-number']) ? null : 'true') ;
+$password_special =  (empty($_GET['pass-special']) ? null : 'true') ;
 
-
-function generatorPassword( $length , $only_number) {
+function generatorPassword( $length , $only_number, $only_special) {
 
     if($only_number == true ){
         $alphabet = '1234567890';
+    }
+    elseif($only_special == true){
+        $alphabet = '!"#$%&*+-./<=>?@[\]^_`{|}~';
     }
     else{
          $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!"#$%&*+-./<=>?@[\]^_`{|}~';
@@ -20,8 +23,8 @@ function generatorPassword( $length , $only_number) {
     }
     return implode($pass); 
 }
-if(generatorPassword($password_length, $password_type) > 5){
-    $new_password = generatorPassword($password_length, $password_type);
+if(generatorPassword($password_length, $password_number, $password_special) > 5){
+    $new_password = generatorPassword($password_length, $password_number, $password_special);
     session_start();
 
     $_SESSION['login'] = true;

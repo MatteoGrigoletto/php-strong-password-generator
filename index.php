@@ -23,13 +23,19 @@ require_once __DIR__ .  "/functions.php";
             <form action="functions.php" method="get">
                 <div class="mb-3">
                     <label for="password-length" class="form-label">Inserisci numero caratteri password:</label>
-                    <input type="password" name="password-length" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="number" name="password-length" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required  min="5" max="10" placeholder="Inserisci un numero da 5 a 10">
                 </div>
                 <div class="mb-3 form-check">
                     <input name="pass-number" type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Password con solo numeri</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="mb-3 form-check">
+                    <input name="pass-special" type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Password con solo caratteri speciali</label>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </form>
         </div>
     </section>
