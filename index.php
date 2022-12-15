@@ -1,24 +1,8 @@
 <?php
 
-$password_length =(empty($_GET['password-length']) ? null : (int)$_GET['password-length']) ;
+require_once __DIR__ .  "/functions.php";
 
-function generatorPassword( $length) {
-    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!"#$%&*+-./<=>?@[\]^_`{|}~';
-    $pass = array();
-    $alphaLength = strlen($alphabet) - 1;
-    for ($i = 0; $i < $length; $i++) {
-        $single_character = rand(0, $alphaLength);
-        $pass[] = $alphabet[$single_character];
-    }
-    return implode($pass); 
-}
-
-$random_password = generatorPassword($password_length);
-
-var_dump($random_password);
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +22,7 @@ var_dump($random_password);
             <input name="password-length" type="text">
             <button type="submit"> Crea</button>
         </form>
+        <div></div>
         </div>
     </section>
   
