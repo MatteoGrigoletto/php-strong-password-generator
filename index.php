@@ -26,8 +26,8 @@ require_once __DIR__ .  "/functions.php";
                     <input type="password" name="password-length" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <input name="pass-number" type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Password con solo numeri</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
